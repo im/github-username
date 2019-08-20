@@ -13,6 +13,6 @@ git add -A
 git commit -m 'build'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-git push -f https://${access_token}@github.com/im/github-username.git master
+git push -f https://${access_token}@github.com/im/github-username.git master:master
 
 cd -
