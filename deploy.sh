@@ -15,6 +15,6 @@ git status
 git commit -m 'build'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-git push -f https://${access_token}@github.com/im/github-username.git master:master
+git push origin master -f https://${access_token}@github.com/im/github-username.git
 
 cd -
