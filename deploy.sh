@@ -8,8 +8,12 @@ npm install
 # 生成静态文件
 npm run build
 
+cd dist
+
 git init
 git add -A
+git status
+ll
 git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
