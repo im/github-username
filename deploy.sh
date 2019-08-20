@@ -8,7 +8,8 @@ npm install
 # 生成静态文件
 npm run build
 
-git init
+# git init
+git status
 git add -A
 git commit -m 'build'
 
