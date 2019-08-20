@@ -1,28 +1,33 @@
 
 const request = require('request')
+const axios = require('axios');
 const letters = 'abcdefghijklmnopqrstuvwxyz'.split('')
-const letterArr = []
+const letterArr = ['aaa', 'bbb', 'ccc']
+const successName = []
+const failName = []
+let successCount = 0;
+let failCount = 0;
+let completeTotal = 0
 
-for (let i = 1; i < letters.length; i++) {
-    for (let j = 1; j < letters.length; j++) {
-        letterArr.push(letters[i] + letters[j])
-    }
-}
 
-console.log(letterArr.length)
-getUsername('im')
+// for (let i = 1; i < letters.length; i++) {
+//     for (let j = 1; j < letters.length; j++) {
+//         letterArr.push(letters[i] + letters[j])
+//     }
+// }
+
+const total = letterArr.length
+
+getUsername(letterArr[0])
 function getUsername (name) {
-    request({
-        url: `https://github.com/${name}`,
-        timeout: 1000,
-        headers: {
-            'Cache-Control': 'no-cach',
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'
-        }
-    }, (err, res, body) => {
-        if (res) {
-            console.log(res.statusCode)
-        }
-        console.log('err: ', err);
-    })
+    axios.get(`https://github.com/${name}`).then((res) => {
+        successName.push(name)
+        successCount++
+        completeTotal++
+    }).catch(err => {
+        failName.push(name)
+        failCount++
+        completeTotal++
+    });
 }
+
