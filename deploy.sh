@@ -11,6 +11,7 @@ npm run build
 # git init
 git status
 git add -A
+git status
 git commit -m 'build'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
