@@ -8,13 +8,11 @@ npm install
 # 生成静态文件
 npm run build
 
-# git init
-git status
+git init
 git add -A
-git status
-git commit -m 'build'
+git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-git push origin master -f https://${access_token}@github.com/im/github-username.git
+git push -f https://${access_token}@github.com/im/vuepress-theme-postline.git master:gh-pages
 
 cd -
