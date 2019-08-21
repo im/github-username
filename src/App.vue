@@ -30,9 +30,14 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 const userInfo = require('../username/')
+declare module 'vue/types/vue' {
+    interface Vue {
+        [key: string]: any,
+    }
+}
 @Component({})
 export default class App extends Vue {
-    userInfo: Object = userInfo
+    userInfo: any = userInfo
 
     keyword: String = ''
 
@@ -47,13 +52,13 @@ export default class App extends Vue {
     }
 
     formatData() {
-        this.userInfo.unoccupyName.forEach((name: String) => {
+        this.userInfo['unoccupyName'].forEach((name: String) => {
             this.list.push({
                 occupy: false,
                 name: name
             })
         })
-        this.userInfo.occupyName.forEach((name: String) => {
+        this.userInfo['occupyName'].forEach((name: String) => {
             this.list.push({
                 occupy: true,
                 name: name
