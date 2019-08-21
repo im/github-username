@@ -6,6 +6,19 @@
         <a-button type="link">Link</a-button>
     </div>
 </template>
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+import HelloWorld from '@/components/HelloWorld.vue' // @ is an alias to /src
+const usernameList = require('../username/')
+@Component({
+    components: {
+    },
+    created () {
+        console.log(usernameList);
+    }
+})
+export default class App extends Vue {}
+</script>
 <style lang="stylus">
 #app
     font-family 'Avenir', Helvetica, Arial, sans-serif
