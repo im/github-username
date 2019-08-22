@@ -15,7 +15,9 @@ let timeoutCount = 0
 
 for (let i = 0; i < letters.length; i++) {
     for (let j = 0; j < letters.length; j++) {
-        letterArr.push(letters[i] + letters[j])
+        for (let a = 0; a < letters.length; a++) {
+            letterArr.push(letters[i] + letters[j] + letters[a])
+        }
     }
 }
 const total = letterArr.length
@@ -51,7 +53,7 @@ function getUsername() {
     const name = letterArr.shift()
     if (!name) return complete()
     setTimeout(() => {
-        axios.get(`https://github.com/${name}`, {timeout: 10000}).then((res) => {
+        axios.get(`https://github.com/${name}`, { timeout: 10000 }).then((res) => {
             occupyName.push(name)
             occupyCount++
             console.log(chalk.red(`已占用 ==== （${name}）- ${moment().format('HH:mm:ss')} > ${total - letterArr.length}/${total}`))

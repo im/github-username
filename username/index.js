@@ -1,1 +1,1 @@
-module.exports = {"occupyName":["aa","ab","ac","ba","bb","bc","ca","cb","cc"],"unoccupyName":[],"timeoutName":[],"occupyCount":9,"unoccupyCount":0,"timeoutCount":0,"total":9}
+module.exports = {"occupyName":["aa","ab","ac","ba","bc","cc","bb","ca","cb"],"unoccupyName":[],"timeoutName":["bb","ca","cb"],"occupyCount":9,"unoccupyCount":0,"timeoutCount":3,"total":9}
